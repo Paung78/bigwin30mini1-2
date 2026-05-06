@@ -61,35 +61,52 @@
                 radial-gradient(ellipse 60% 40% at 80% 100%, rgba(22, 163, 74, 0.06), transparent);
         }
         .bw30-unlock-card {
-            width: min(420px, 100%);
-            padding: 40px 32px;
-            background: var(--surface);
-            border: 1px solid var(--main-color-alpha-30);
-            border-radius: 24px;
-            box-shadow: var(--shadow), 0 0 0 1px rgba(34, 197, 94, 0.08);
-            text-align: center;
+            width: min(480px, 100%);
+            padding: clamp(28px, 6vw, 48px);
+            background: #e4e9f0;
+            border: none;
+            border-radius: 28px;
+            box-shadow: 6px 6px 12px rgba(163, 177, 198, 0.52), -6px -6px 12px rgba(255, 255, 255, 0.92);
+            display: flex;
+            flex-direction: column;
+            align-items: stretch;
+            gap: 18px;
+            text-align: left;
         }
-        .bw30-unlock-logo {
-            font-size: 3rem;
-            font-weight: 900;
-            letter-spacing: -0.04em;
-            color: var(--bw-green);
-            margin-bottom: 12px;
+        .bw30-unlock-brand-header {
+            width: 100%;
+            text-align: left;
         }
-        .bw30-unlock-title { font-size: 1rem; font-weight: 700; color: var(--neumo-text); margin-bottom: 6px; }
-        .bw30-unlock-sub { font-size: 0.9rem; color: var(--neumo-muted); margin-bottom: 28px; font-weight: 500; }
-        .bw30-input-wrap { margin-bottom: 20px; }
+        .bw30-unlock-brand-title {
+            font-size: clamp(1rem, 3.2vw, 1.25rem);
+            font-weight: 700;
+            color: var(--neumo-text);
+            letter-spacing: 0.04em;
+            line-height: 1.2;
+            margin: 0 0 4px 0;
+        }
+        .bw30-unlock-brand-sub {
+            margin: 0;
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: var(--neumo-muted);
+            letter-spacing: 0.05em;
+        }
+        .brand-red { color: #dc2626; }
+        .brand-black { color: #111827; }
+        .bw30-input-wrap { margin-bottom: 0; }
         .bw30-key-input {
             width: 100%;
-            padding: 16px 20px;
-            background: var(--surface);
-            border: 1px solid var(--main-color-alpha-30);
-            border-radius: 14px;
+            padding: 18px 22px;
+            background: #ffffff;
+            border: 2px solid var(--main-color-alpha-30);
+            border-radius: 18px;
             color: var(--neumo-text);
             font-size: 1rem;
             font-family: var(--font-sans);
-            letter-spacing: 0.15em;
+            letter-spacing: 0.3em;
             text-transform: uppercase;
+            text-align: center;
             transition: border-color 0.2s ease, box-shadow 0.2s ease;
             box-shadow: var(--neumo-inset-sm);
         }
@@ -101,14 +118,16 @@
         }
         .bw30-activate-btn {
             width: 100%;
-            padding: 16px;
+            padding: 18px;
             background: linear-gradient(145deg, #4ade80 0%, #22c55e 45%, #16a34a 100%);
             border: none;
-            border-radius: 14px;
+            border-radius: 18px;
             color: #fff;
             font-size: 0.95rem;
             font-weight: 700;
             font-family: var(--font-sans);
+            letter-spacing: 0.25em;
+            text-transform: uppercase;
             cursor: pointer;
             transition: transform 0.2s ease, box-shadow 0.2s ease;
             box-shadow: 6px 6px 14px rgba(22, 163, 74, 0.3), -4px -4px 12px rgba(255, 255, 255, 0.35);
@@ -119,17 +138,18 @@
         }
         .bw30-activate-btn:disabled { opacity: 0.6; cursor: not-allowed; }
         .bw30-timer {
-            margin-top: 20px;
+            margin-top: 0;
             padding: 14px;
             background: var(--main-color-alpha-10);
             border: 1px solid var(--main-color-alpha-30);
             border-radius: 12px;
             font-weight: 700;
             color: var(--main-color-dark);
+            text-align: center;
             display: none;
         }
         .bw30-success {
-            margin-top: 16px;
+            margin-top: 0;
             padding: 12px;
             background: var(--main-color-alpha-10);
             border: 1px solid var(--main-color-alpha-30);
@@ -137,6 +157,7 @@
             color: var(--text-bw);
             font-size: 0.9rem;
             font-weight: 600;
+            text-align: center;
             display: none;
         }
         .bw30-telegram { margin-top: 24px; }
@@ -198,7 +219,6 @@
             display: none;
         }
         .results-time-badge.visible { display: block; }
-        .bw30-anim-logo { font-size: 2rem; font-weight: 900; letter-spacing: -0.06em; color: var(--bw-green); margin-bottom: 4px; }
         .bw30-bst-box {
             display: flex;
             align-items: center;
@@ -337,9 +357,10 @@
 <body>
     <section id="gate">
         <div class="bw30-unlock-card">
-            <div class="bw30-unlock-logo">LT</div>
-            <div class="bw30-unlock-title">Lottery Tricks Ai Perdition</div>
-            <div class="bw30-unlock-sub">BigWin Lottery WinGo30 Prediction</div>
+            <div class="bw30-unlock-brand-header">
+                <h1 class="bw30-unlock-brand-title"><span class="brand-red">SuperSel</span> <span class="brand-black">Earing</span></h1>
+                <p class="bw30-unlock-brand-sub">BigWin30MiniV1.2</p>
+            </div>
             <div class="bw30-input-wrap">
                 <input type="text" id="keyInput" class="bw30-key-input" placeholder="ENTER ACCESS KEY" autocomplete="off">
             </div>
@@ -348,20 +369,14 @@
             </button>
             <div id="keyTimer" class="bw30-timer"></div>
             <div id="keySuccess" class="bw30-success">Access Granted</div>
-            <div class="bw30-telegram">
-                <a href="https://t.me/LotteryTricksAiPrediction" target="_blank">
-                    <i class="fab fa-telegram"></i> JOIN TELEGRAM
-                </a>
-            </div>
         </div>
     </section>
 
     <div class="results-container" id="resultsContainer">
         <div class="results-header">
             <div class="results-header-left">
-                <div class="bw30-anim-logo">LT</div>
-                <h1>Lottery Tricks Ai Perdition</h1>
-                <p class="bw30-subtitle">BigWin WinGo30 History - Prediction</p>
+                <h1><span class="brand-red">SuperSel</span> <span class="brand-black">Earing</span></h1>
+                <p class="bw30-subtitle">BigWin30MiniV1.2</p>
             </div>
             <div id="resultsTimeRemaining" class="results-time-badge"></div>
         </div>
@@ -402,7 +417,8 @@
     <script>
         const ACCEPTED_KEY_TYPES = ['bigwin'];
         const FIREBASE_PATH = 'bigwin/default';
-        const STORAGE_PREFIX = 'bw30_';
+        const STORAGE_PREFIX = 'bigwinShared_';
+        const LEGACY_STORAGE_PREFIXES = ['bw1_', 'bw30_'];
         const firebaseConfig = {
             apiKey: "AIzaSyDj6z3O91NnlQ1zVdripiGhqQMsQhR4_ak",
             authDomain: "ck30-35e97.firebaseapp.com",
@@ -427,6 +443,19 @@
         let db = null, loginDb = null, firebaseListener = null, keyStatusListener = null;
         let serverOffset = 0, expireTime = parseInt(localStorage.getItem(STORAGE_PREFIX + 'expireTime')) || 0;
         let activatedKeyId = localStorage.getItem(STORAGE_PREFIX + 'activatedKeyId') || null;
+        if (!expireTime || !activatedKeyId) {
+            for (const legacyPrefix of LEGACY_STORAGE_PREFIXES) {
+                const legacyExpire = parseInt(localStorage.getItem(legacyPrefix + 'expireTime')) || 0;
+                const legacyKeyId = localStorage.getItem(legacyPrefix + 'activatedKeyId') || null;
+                if (legacyExpire > 0 && legacyKeyId) {
+                    expireTime = legacyExpire;
+                    activatedKeyId = legacyKeyId;
+                    localStorage.setItem(STORAGE_PREFIX + 'expireTime', String(expireTime));
+                    localStorage.setItem(STORAGE_PREFIX + 'activatedKeyId', activatedKeyId);
+                    break;
+                }
+            }
+        }
         let timerInterval = null;
         let wingoCDInterval = null;
         let currentResults = [];
